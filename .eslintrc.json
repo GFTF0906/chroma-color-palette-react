@@ -24,6 +24,10 @@
     "react/react-in-jsx-scope": "off",
     "comma-dangle": "off",
     "no-console": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

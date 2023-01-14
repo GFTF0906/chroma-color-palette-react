@@ -5,9 +5,22 @@ import { ColorPalette } from '../types/ColorPaletteType';
 
 // eslint-disable-next-line consistent-return
 function useFetchRandomPalette() {
+  const possibleModes = [
+    'monochrome',
+    'monochrome-dark',
+    'monochrome-light',
+    'analogic',
+    'complement',
+    'analogic-complement',
+    'triad',
+    'quad',
+  ];
+
   const randomHex = `${Math.floor(Math.random() * 0xffffff)
     .toString(16)
     .padEnd(6, '0')}`;
+
+  const randomIndex = Math.floor(Math.random() * possibleModes.length);
 
   try {
     const { data, isLoading, isError } = useQuery(
@@ -15,9 +28,12 @@ function useFetchRandomPalette() {
       () =>
         axios
           .get(
-            `https://www.thecolorapi.com/scheme?hex=${randomHex.toUpperCase()}&format=json&mode=analogic&count=6`
+            `https://www.thecolorapi.com/scheme?hex=${randomHex.toUpperCase()}&mode=${
+              possibleModes[randomIndex]
+            }&count=6`
           )
-          .then((resp) => resp.data)
+          .then((resp) => resp.data),
+      { enabled: false }
     );
 
     const randomPaletteObj: ColorPalette = {

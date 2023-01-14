@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen flex items-center flex-col p-28 text-neutral-100 bg-neutral-900;
+  @apply min-h-screen flex items-center flex-col p-28 text-neutral-100 bg-gradient-to-bl from-neutral-800 to-neutral-900;
 }

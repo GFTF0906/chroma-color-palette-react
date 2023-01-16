@@ -10,9 +10,9 @@ const setColorType = (str: string) => {
   const hexRegex = /(^#?(\d|[a-f]|[A-F]){3,6}$)/gm;
   const isHex = checkRegex(str, hexRegex);
 
-  if (isHex) return `hex=${str.replace('#', '')}`;
+  if (!isHex) return;
 
-  return '';
+  return `hex=${str.replace('#', '')}`;
 };
 
 // eslint-disable-next-line consistent-return
@@ -28,6 +28,7 @@ async function fetchData(
     }
 
     const colorType = setColorType(color);
+    if (!colorType) return;
 
     const baseUrl = 'https://www.thecolorapi.com/scheme?';
     const params = `${colorType}&mode=${

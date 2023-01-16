@@ -23,7 +23,7 @@ function App() {
     if (!userData) return;
 
     const colorsArr = userData.dataObj.colors;
-    if (colorsArr.every((color) => color.hex.value === '#000000')) return;
+    if (colorsArr?.every((color) => color?.hex?.value === '#000000')) return;
 
     setCurrentColorPalette(userData?.dataObj);
   };

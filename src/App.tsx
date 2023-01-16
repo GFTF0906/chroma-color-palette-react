@@ -9,6 +9,7 @@ import Titles from './components/Titles';
 import fetchData from './utils/FetchData';
 import Loading from './components/Loading';
 import Error from './components/Error';
+import Logo from './components/Logo';
 
 function App() {
   const { dataObj: data, isLoading, isError } = useFetchRandomPalette();
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <main className="flex items-center justify-center flex-col gap-16">
+      <Logo />
       <Titles />
       <SearchColor onSubmit={handleSubmit} />
       {currentColorPalette && (

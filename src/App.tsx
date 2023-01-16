@@ -7,6 +7,8 @@ import ColorsRender from './components/ColorsRender';
 import SearchColor from './components/SearchColor';
 import Titles from './components/Titles';
 import fetchData from './utils/FetchData';
+import Loading from './components/Loading';
+import Error from './components/Error';
 
 function App() {
   const { dataObj: data, isLoading, isError } = useFetchRandomPalette();
@@ -26,11 +28,11 @@ function App() {
   };
 
   if (isError) {
-    return <h3>Error on generating your color palette</h3>;
+    return <Error />;
   }
 
   if (isLoading) {
-    return <h3>Loading...</h3>;
+    return <Loading />;
   }
 
   return (

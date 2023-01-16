@@ -21,8 +21,8 @@ function ColorCard({ color }: ColorCardProps) {
       <h3 className="pb-1 text-md font-bold">{name.value}</h3>
 
       <ButtonCopy obj={hex} textValue={hex.value} />
-      <ButtonCopy obj={hsl} textValue={hsl.value} />
       <ButtonCopy obj={rgb} textValue={rgb.value} />
+      <ButtonCopy obj={hsl} textValue={hsl.value} />
     </div>
   );
 }

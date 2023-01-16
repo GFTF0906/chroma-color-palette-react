@@ -8,6 +8,9 @@ This project is currently complete. Users can see a random color palette once th
 
 ## Project Screen Shot(s)
 
+![Desktop View](./src/assets/images/desktop-view.png)
+![Mobile View](./src/assets/images/mobile-view.png)
+
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `pnpm` installed globally on your machine.
